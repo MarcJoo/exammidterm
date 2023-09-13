@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Ticket Shop</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav li {
+            margin: 0 20px;
+            color: #fff;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2 {
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Audio controls style */
+        audio {
+            display: none;
+        }
+
+        /* Add background color and borders */
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select,
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"]:checked + label::before {
+            content: "\2713";
+            display: inline-block;
+            font-size: 16px;
+            color: #333;
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+       
+
+</head>
+<body>
+    <header>
+        <h1>Online Ticket Shop</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Order Tickets</h2>
+        <form action="ORDERSUMMARYLIST.php" method="post">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required><br><br>
+
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male"> Male
+            <input type="radio" id="female" name="gender" value="Female"> Female
+            <input type="radio" id="other" name="gender" value="Other"> Other<br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+
+            <label for="cinema">Cinema to Watch:</label>
+            <select id="cinema" name="cinema">
+                <option value="Cinema 1">Cinema 1</option>
+                <option value="Cinema 2">Cinema 2</option>
+                <option value="Cinema 3">Cinema 3</option>
+                <option value="Cinema 4" selected>Cinema 4</option>
+                <option value="Cinema 5">Cinema 5</option>
+            </select><br><br>
+
+            <label for="numTickets">Number of Tickets:</label>
+            <input type="number" id="numTickets" name="numTickets" min="1" max="10" required><br><br>
+
+            <label>Add Ons:</label>
+            <input type="checkbox" id="popcorn" name="addOns[]" value="Popcorn"> Popcorn
+            <input type="checkbox" id="drink" name="addOns[]" value="Drink"> Drink
+            <input type="checkbox" id="burger" name="addOns[]" value="Burger"> Burger<br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Online Ticket Shop</p>
+    </footer>
+    <audio controls autoplay loop>
+        <source src="background_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
